@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3 class="heading">Blogs</h3>
+    <ul class="container">
+        <ul>Title : {{blog.title}}</ul>
+        <ul>Author : {{blog.author}}</ul>
+        <ul>Publication Date : {{blog.publication_date}}</ul>
+        <ul>Content : {{blog.content}}</ul>
+    </ul>
+    <ul class="container">
+    <form method="POST" class="sub-container">
+        {% csrf_token %}
+        {{comment.as_p}}
+        <input type="submit" value="Comment">
+    </form>
+    {{msg}}
+    </ul>
+
+    <ul class="container">
+        {% for com in comments %}
+            <ul>Comment : {{com.content}}</ul>
+        {% empty %}
+            No Comments Yet!
+        {% endfor %}
+    </ul>
+{% endblock %}
