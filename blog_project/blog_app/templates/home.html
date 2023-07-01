@@ -10,6 +10,7 @@
         </form>
         {{msg}}
     </div>
+    <h2><center>Blogs</center></h2>
     <div class="container">
         {% for blog in blogs %}
             <ul><a href="{% url 'blog' id=blog.id %}">{{blog.title}}</a></ul>

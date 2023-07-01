@@ -5,6 +5,9 @@
 		<link rel="stylesheet" href="{% static 'c1.css' %}"/>
 	</head>
 	<body>
+		<div class="nav">
+			<a href="{% url 'home' %}">Home</a>
+		</div>
         {% block content %}
         {% endblock %}
 	</body>
